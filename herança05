@@ -1,0 +1,30 @@
+<?php
+
+class Carro {
+    public function ligar() {
+        echo "Carro ligado<br>";
+    }
+
+    public function desligar() {
+        echo "Carro desligado<br>";
+    }
+
+    public function acelerar() {
+        echo "Carro acelerando<br>";
+    }
+}
+
+class CarroEletrico extends Carro {
+    public function carregarBateria() {
+        echo "Bateria carregada<br>";
+    }
+}
+
+// Testando a classe CarroEletrico
+$meuCarro = new CarroEletrico();
+$meuCarro->ligar();
+$meuCarro->acelerar();
+$meuCarro->desligar();
+$meuCarro->carregarBateria();
+
+?>
