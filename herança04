@@ -1,0 +1,67 @@
+<?php
+
+// Classe base Veiculo
+class Veiculo {
+    public $marca;
+    public $modelo;
+    public $ano;
+
+    public function __construct($marca, $modelo, $ano) {
+        $this->marca = $marca;
+        $this->modelo = $modelo;
+        $this->ano = $ano;
+    }
+
+    public function exibirInfo() {
+        echo "Marca: {$this->marca}, Modelo: {$this->modelo}, Ano: {$this->ano}<br>";
+    }
+}
+
+// Classe Carro herdando de Veiculo
+class Carro extends Veiculo {
+    public $portas;
+
+    public function __construct($marca, $modelo, $ano, $portas) {
+        parent::__construct($marca, $modelo, $ano);
+        $this->portas = $portas;
+    }
+
+    public function abrirPortaMalas() {
+        echo "Porta-malas do {$this->modelo} aberto.<br>";
+    }
+}
+
+// Classe Moto herdando de Veiculo
+class Moto extends Veiculo {
+    public $cilindradas;
+
+    public function __construct($marca, $modelo, $ano, $cilindradas) {
+        parent::__construct($marca, $modelo, $ano);
+        $this->cilindradas = $cilindradas;
+    }
+
+    public function empinar() {
+        echo "A moto {$this->modelo} está empinando!<br>";
+    }
+}
+
+// Instanciando dois carros
+$carro1 = new Carro("Toyota", "Corolla", 2020, 4);
+$carro2 = new Carro("Honda", "Civic", 2018, 2);
+
+// Instanciando duas motos
+$moto1 = new Moto("Yamaha", "MT-07", 2021, 689);
+$moto2 = new Moto("Honda", "CB 500", 2019, 500);
+
+// Usando métodos distintos
+$carro1->exibirInfo();
+$carro1->abrirPortaMalas();
+
+$carro2->exibirInfo();
+
+$moto1->exibirInfo();
+$moto1->empinar();
+
+$moto2->exibirInfo();
+
+?>
